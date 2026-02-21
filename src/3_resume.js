@@ -1,0 +1,102 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+var output = (
+<div>
+  
+
+<h1 >KEYUR DHOLAKIYA</h1>
+<p >BHAVNAGAR, INDIA, 364001</p>
+<p>
+  alpeshdholakiya7858@gmail.com 
+  • 
+  9313130821 
+  • 
+  <a href="https://www.linkedin.com/in/keyur-dholakiya-4a5406350">linkedin.com/in/keyur-dholakiya</a>
+</p>
+
+<hr / >
+
+<h2>SUMMARY</h2>
+<p>
+  Dynamic full-stack developer with a strong foundation in MERN stack technologies.<br/>
+  Known for effective collaboration and meeting project deadlines, contributing to successful outcomes in team environments.<br/>
+  Eager to leverage technical skills and project management abilities to drive team success.<br/>
+  Hardworking employee with customer service, multitasking, and time management abilities.<br/>
+  Devoted to giving every customer a positive and memorable experience.
+</p>
+
+<hr / >
+
+<h2>TECHNICAL SKILLS</h2>
+<ul>
+  <li>HTML and CSS proficiency</li>
+  <li>JavaScript and frameworks</li>
+  <li>Node.js and Express.js</li>
+  <li>Framework as Bootstrap</li>
+  <li>Database management (MySQL and MongoDB)</li>
+  <li>Version control (GitHub)</li>
+  <li>API development</li>
+  <li>Front-end development</li>
+  <li>Back-end development</li>
+  <li>Full-stack development</li>
+  <li>MERN stack expertise</li>
+</ul>
+
+<hr / >
+
+<h2>PROFESSIONAL EXPERIENCE</h2>
+<h3>The Easy Learn Academy / Intern - Bhavnagar, IN</h3>
+<ul>
+  <li>Executed project objectives by collaborating closely with team members and meeting deadlines.</li>
+  <li>Coordinated with cross-functional teams to achieve shared goals.</li>
+  <li>Developed skills as MERN stack developer, contributing to overall project success.</li>
+  <li>Functioned as both frontend and backend developer on various projects</li>
+</ul>
+
+<hr / >
+
+<h2>EDUCATION</h2>
+<h3>Bachelor of Engineering - Information Technology</h3>
+<p>Gyanmanjiri Institute of Technology - Bhavnagar, India</p>
+<ul>
+  <li>Participate in Techmanjari.</li>
+  <li>Also do course of MERN stack from Easy Learn Academy.</li>
+</ul>
+
+<hr / >
+
+<h2>ADDITIONAL INFORMATION</h2>
+
+<h3>Languages</h3>
+<ul>
+  <li>English</li>
+  <li>Hindi</li>
+  <li>Gujarati</li>
+</ul>
+
+<h3>Web sites & social links</h3>
+<ul>
+  <li><a href="https://www.linkedin.com/in/keyur-dholakiya-4a5406350">https://www.linkedin.com/in/keyur-dholakiya-4a5406350</a></li>
+</ul>
+
+<h3>Awards / Activities</h3>
+<ul>
+  <li>Participate in Techmanjari</li>
+</ul>
+
+<hr />
+
+<p >
+  Generated on Febr/uary 2026
+</p>
+
+
+ </div>
+
+)
+root.render(output);
+
