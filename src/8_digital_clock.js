@@ -43,10 +43,8 @@ function DigitalClock(props)
     );
 }
 
-function updatetime()
 // Create Date Object
-{
-    let d = new Date();
+let d = new Date();
 
 // Weekday Array
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -64,5 +62,3 @@ let datetime = {
 
 // Correct React render
 root.render(<DigitalClock {...datetime} />);
-}
-setInterval(updatetime,1000);
