@@ -1,266 +1,335 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//functional component (1st letter must be capital)
+function Menu() {
+    return (<nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div className="container">
+            <a className="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i className="fas fa-bars ms-1" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarResponsive">
+                <ul className="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
+                    <li className="nav-item"><a className="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
+                    <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
+                    <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>)
+}
+function Siteheader() {
+    return (<header className="masthead">
+        <div className="container">
+            <div className="masthead-subheading">Welcome To Our Studio!</div>
+            <div className="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <a className="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+        </div>
+    </header>);
+}
+//create functional components with arguments 
+function ServiceItem(props) {
+    return (<div className="col-md-4">
+        <span className="fa-stack fa-4x">
+            <i className="fas fa-circle fa-stack-2x text-primary" />
+            <i className={"fas " + props.logo + " fa-stack-1x fa-inverse"} />
+        </span>
+        <h4 className="my-3">{props.heading}</h4>
+        <p className="text-muted">{props.detail}</p>
+    </div>)
+}
+function Services() {
+    return (<section className="page-section" id="services">
+        <div className="container">
+            <div className="text-center">
+                <h2 className="section-heading text-uppercase">Services</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div className="row text-center">
+                <ServiceItem logo='fa-laptop' heading='Responsive design' detail='We craft visually stunning, mobile-first websites that deliver a seamless experience across all devices and screen sizes. Our designs adapt fluidly — whether viewed on a smartphone, tablet, or desktop — ensuring your brand looks sharp and professional everywhere your audience finds you.' />
+                <ServiceItem logo='fa-lock' heading='Cuber security' detail='Protect your business from evolving digital threats with our comprehensive cybersecurity solutions. From vulnerability assessments and penetration testing to real-time threat monitoring and data encryption, we build robust defense layers that keep your systems, data, and reputation secure around the clock.' />
+                <ServiceItem logo='fa-shopping-cart' heading='E-commerce' detail='Turn your online store into a high-converting sales machine. We develop fast, secure, and scalable e-commerce platforms tailored to your business needs — complete with intuitive user interfaces, smooth payment integrations, inventory management, and optimized checkout experiences that drive growth and customer loyalty.' />
 
-function siteHeader(){
-    return(
-        <nav className="navbar navbar-expand-lg navbar-dark sticky-top shadow">
-    <div className="container">
-      <a className="navbar-brand fw-bold fs-4" href="#">Spice <span className="text-warning">Haven</span></a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
-          <li className="nav-item"><a className="nav-link" href="#about">About</a></li>
-          <li className="nav-item"><a className="nav-link" href="#menu">Menu</a></li>
-          <li className="nav-item"><a className="nav-link" href="#specials">Specials</a></li>
-          <li className="nav-item"><a className="nav-link" href="#testimonials">Reviews</a></li>
-          <li className="nav-item"><a className="nav-link" href="#gallery">Gallery</a></li>
-          <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-    )
+            </div>
+        </div>
+    </section>)
 }
-function home(){
-    return(
-         <section id="home" className="hero d-flex align-items-center text-center">
-    <div className="container">
-      <h1 className="display-3 fw-bold mb-3">Welcome to Spice Haven</h1>
-      <p className="lead fs-4 mb-4">Where tradition meets flavor in every bite</p>
-      <a href="#menu" className="btn btn-lg btn-warning text-dark px-5 py-3 fw-bold">View Menu</a>
-    </div>
-  </section>
-    )
+function PortfolioItem() {
+    return (<div className="col-lg-4 col-sm-6 mb-4">
+        {/* Portfolio item 1*/}
+        <div className="portfolio-item">
+            <a className="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                <div className="portfolio-hover">
+                    <div className="portfolio-hover-content"><i className="fas fa-plus fa-3x" /></div>
+                </div>
+                <img className="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+            </a>
+            <div className="portfolio-caption">
+                <div className="portfolio-caption-heading">Threads</div>
+                <div className="portfolio-caption-subheading text-muted">Illustration</div>
+            </div>
+        </div>
+    </div>)
 }
-function aboutUs(){
-    return(
-        <section id="about" className="py-5 bg-light">
-    <div className="container">
-      <h2 className="text-center section-title display-5">About Us</h2>
-      <div className="row align-items-center">
-        <div className="col-lg-6 mb-4 mb-lg-0">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="img-fluid rounded shadow" alt="Restaurant interior" />
+function Portfolio() {
+    return (<section className="page-section bg-light" id="portfolio">
+        <div className="container">
+            <div className="text-center">
+                <h2 className="section-heading text-uppercase">Portfolio</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <div className="row">
+                <PortfolioItem title='' category='' photo='' />
+                <PortfolioItem title='' category='' photo='' />
+                <PortfolioItem title='' category='' photo='' />
+                <PortfolioItem title='' category='' photo='' />
+                <PortfolioItem title='' category='' photo='' />
+                <PortfolioItem title='' category='' photo='' />
+                
+            </div>
         </div>
-        <div className="col-lg-6">
-          <h3 className="mb-4">A Passion for Authentic Flavors</h3>
-          <p className="lead">Since 2012, Spice Haven has been serving the most authentic Indian and Indo-Chinese cuisine in Bhavnagar.</p>
-          <p>We believe food is not just something to fill your stomach — it's an experience, a memory, a celebration of culture and love.</p>
-          <p className="mb-4">Every dish is prepared with fresh ingredients and traditional techniques passed down through generations.</p>
-          <div className="row g-4 text-center">
-            <div className="col-4">
-              <h3 className="text-primary fw-bold">12+</h3>
-              <p>Years of Excellence</p>
-            </div>
-            <div className="col-4">
-              <h3 className="text-primary fw-bold">250k+</h3>
-              <p>Happy Customers</p>
-            </div>
-            <div className="col-4">
-              <h3 className="text-primary fw-bold">4.8</h3>
-              <p>Average Rating</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    )
+    </section>)
 }
-function menu(){
-    return(
-        <section id="menu" className="py-5">
-    <div className="container">
-      <h2 className="text-center section-title display-5">Our Popular Dishes</h2>
-      <div className="row g-4">
-        <div className="col-md-6 col-lg-4">
-          <div className="card card-dish shadow h-100">
-            <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="card-img-top" alt="Butter Chicken" />
-            <div className="card-body text-center">
-              <h5 className="card-title">Butter Chicken</h5>
-              <p className="text-muted">₹ 380</p>
+function Aboutus() {
+    return (<section className="page-section" id="about">
+        <div className="container">
+            <div className="text-center">
+                <h2 className="section-heading text-uppercase">About</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
-          </div>
+            <ul className="timeline">
+                <li>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>2009-2011</h4>
+                            <h4 className="subheading">Our Humble Beginnings</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li className="timeline-inverted">
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>March 2011</h4>
+                            <h4 className="subheading">An Agency is Born</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>December 2015</h4>
+                            <h4 className="subheading">Transition to Full Service</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li className="timeline-inverted">
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>July 2020</h4>
+                            <h4 className="subheading">Phase Two Expansion</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li className="timeline-inverted">
+                    <div className="timeline-image">
+                        <h4>
+                            Be Part
+                            <br />
+                            Of Our
+                            <br />
+                            Story!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div className="col-md-6 col-lg-4">
-          <div className="card card-dish shadow h-100">
-            <img src="https://images.unsplash.com/photo-1563245372-f460e9a8448c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="card-img-top" alt="Paneer Tikka" />
-            <div className="card-body text-center">
-              <h5 className="card-title">Paneer Tikka</h5>
-              <p className="text-muted">₹ 320</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6 col-lg-4">
-          <div className="card card-dish shadow h-100">
-            <img src="https://images.unsplash.com/photo-1624552184280-9e9631bbeee9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="card-img-top" alt="Biryani" />
-            <div className="card-body text-center">
-              <h5 className="card-title">Hyderabadi Dum Biryani</h5>
-              <p className="text-muted">₹ 420</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="text-center mt-5">
-        <a href="#" className="btn btn-outline-primary btn-lg px-5">View Full Menu</a>
-      </div>
-    </div>
-  </section>
-    )
+    </section>)
 }
-function todaySpc(){
-    return(
- <section id="specials" className="py-5 bg-dark text-white">
-    <div className="container">
-      <h2 className="text-center section-title display-5 text-white">Today's Specials</h2>
-      <div className="row g-4 justify-content-center">
-        <div className="col-lg-5">
-          <div className="card bg-dark border-warning shadow">
-            <div className="card-body text-center p-5">
-              <h3 className="text-warning">Family Thali Feast</h3>
-              <h4 className="my-4">Only ₹999 for 4 persons</h4>
-              <p className="lead">Valid today only • 7 PM – 10:30 PM</p>
-              <a href="#" className="btn btn-warning text-dark mt-3 px-5 py-3">Book Table</a>
+function Team() {
+    return (<section className="page-section bg-light" id="team">
+        <div className="container">
+            <div className="text-center">
+                <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    )
-}
-function testimonial(){
-    return(
-         <section id="testimonials" className="py-5 bg-light">
-    <div className="container">
-      <h2 className="text-center section-title display-5">What Our Guests Say</h2>
-      <div className="row g-4 mt-4">
-        <div className="col-md-6 col-lg-4">
-          <div className="card testimonial-card h-100 position-relative">
-            <div className="quote-icon">“</div>
-            <div className="card-body text-center p-4">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" className="avatar mb-3" alt="Customer" />
-              <p className="fst-italic mb-4">"The best butter chicken I've ever had outside Punjab! The ambiance is cozy and staff is super friendly. Will come back every week!"</p>
-              <h6 className="mb-1">Priya Sharma</h6>
-              <p className="text-muted small">Regular Customer</p>
-              <div className="text-warning">★★★★★</div>
+            <div className="row">
+                <div className="col-lg-4">
+                    <div className="team-member">
+                        <img className="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="..." />
+                        <h4>Parveen Anand</h4>
+                        <p className="text-muted">Lead Designer</p>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i className="fab fa-twitter" /></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i className="fab fa-facebook-f" /></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i className="fab fa-linkedin-in" /></a>
+                    </div>
+                </div>
+                <div className="col-lg-4">
+                    <div className="team-member">
+                        <img className="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="..." />
+                        <h4>Diana Petersen</h4>
+                        <p className="text-muted">Lead Marketer</p>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i className="fab fa-twitter" /></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Facebook Profile"><i className="fab fa-facebook-f" /></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen LinkedIn Profile"><i className="fab fa-linkedin-in" /></a>
+                    </div>
+                </div>
+                <div className="col-lg-4">
+                    <div className="team-member">
+                        <img className="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="..." />
+                        <h4>Larry Parker</h4>
+                        <p className="text-muted">Lead Developer</p>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i className="fab fa-twitter" /></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i className="fab fa-facebook-f" /></a>
+                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i className="fab fa-linkedin-in" /></a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div className="col-md-6 col-lg-4">
-          <div className="card testimonial-card h-100 position-relative">
-            <div className="quote-icon">“</div>
-            <div className="card-body text-center p-4">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" className="avatar mb-3" alt="Customer" />
-              <p className="fst-italic mb-4">"Paneer Tikka was perfectly spiced and juicy. The family thali is great value for money. Highly recommended for groups!"</p>
-              <h6 className="mb-1">Rahul Patel</h6>
-              <p className="text-muted small">Food Blogger</p>
-              <div className="text-warning">★★★★★</div>
+            <div className="row">
+                <div className="col-lg-8 mx-auto text-center"><p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
             </div>
-          </div>
         </div>
-        <div className="col-md-6 col-lg-4">
-          <div className="card testimonial-card h-100 position-relative">
-            <div className="quote-icon">“</div>
-            <div className="card-body text-center p-4">
-              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" className="avatar mb-3" alt="Customer" />
-              <p className="fst-italic mb-4">"The biryani here is next level! Aromatic, perfectly layered, and generous portions. Best place in Bhavnagar for authentic taste."</p>
-              <h6 className="mb-1">Neha Desai</h6>
-              <p className="text-muted small">Local Resident</p>
-              <div className="text-warning">★★★★★</div>
+    </section>)
+}
+function Client() {
+    return (<div className="py-5">
+        <div className="container">
+            <div className="row align-items-center">
+                <div className="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/microsoft.svg" alt="..." aria-label="Microsoft Logo" /></a>
+                </div>
+                <div className="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/google.svg" alt="..." aria-label="Google Logo" /></a>
+                </div>
+                <div className="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/facebook.svg" alt="..." aria-label="Facebook Logo" /></a>
+                </div>
+                <div className="col-md-3 col-sm-6 my-3">
+                    <a href="#!"><img className="img-fluid img-brand d-block mx-auto" src="assets/img/logos/ibm.svg" alt="..." aria-label="IBM Logo" /></a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-    )
-} function gallery(){
-    return(
-         <section id="gallery" className="py-5">
-    <div className="container">
-      <h2 className="text-center section-title display-5">Gallery</h2>
-      <div className="row g-3">
-        <div className="col-6 col-md-4 col-lg-3">
-          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="img-fluid rounded shadow" alt="Food 1" />
-        </div>
-        <div className="col-6 col-md-4 col-lg-3">
-          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="img-fluid rounded shadow" alt="Food 2" />
-        </div>
-        <div className="col-6 col-md-4 col-lg-3">
-          <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="img-fluid rounded shadow" alt="Food 3" />
-        </div>
-        <div className="col-6 col-md-4 col-lg-3">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" className="img-fluid rounded shadow" alt="Interior" />
-        </div>
-      </div>
-    </div>
-  </section>
-    )
+    </div>)
 }
-function conatctUs(){
-    return(
-         <section id="contact" className="py-5 bg-light">
-    <div className="container">
-      <h2 className="text-center section-title display-5">Get In Touch</h2>
-      <div className="row g-5 mt-4">
-        <div className="col-lg-6">
-          <h4>Visit Us</h4>
-          <p className="lead">123 Flavor Street, Foodie Nagar<br />Bhavnagar, Gujarat 364001</p>
-          <h4 className="mt-4">Opening Hours</h4>
-          <p>Monday – Sunday<br />12:00 PM – 11:00 PM</p>
-          <h4 className="mt-4">Contact</h4>
-          <p className="fs-5">+91 98765 43210<br />spicehaven@email.com</p>
+function Contactus() {
+    return (<section className="page-section" id="contact">
+        <div className="container">
+            <div className="text-center">
+                <h2 className="section-heading text-uppercase">Contact Us</h2>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            {/* * * * * * * * * * * * * * * **/}
+            {/* * * SB Forms Contact Form * **/}
+            {/* * * * * * * * * * * * * * * **/}
+            {/* This form is pre-integrated with SB Forms.*/}
+            {/* To make this form functional, sign up at*/}
+            {/* https://startbootstrap.com/solution/contact-forms*/}
+            {/* to get an API token!*/}
+            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <div className="row align-items-stretch mb-5">
+                    <div className="col-md-6">
+                        <div className="form-group">
+                            {/* Name input*/}
+                            <input className="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                            <div className="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <div className="form-group">
+                            {/* Email address input*/}
+                            <input className="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                            <div className="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                            <div className="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        </div>
+                        <div className="form-group mb-md-0">
+                            {/* Phone number input*/}
+                            <input className="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" />
+                            <div className="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="form-group form-group-textarea mb-md-0">
+                            {/* Message input*/}
+                            <textarea className="form-control" id="message" placeholder="Your Message *" data-sb-validations="required" defaultValue={""} />
+                            <div className="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                        </div>
+                    </div>
+                </div>
+                {/* Submit success message*/}
+                {/**/}
+                {/* This is what your users will see when the form*/}
+                {/* has successfully submitted*/}
+                <div className="d-none" id="submitSuccessMessage">
+                    <div className="text-center text-white mb-3">
+                        <div className="fw-bolder">Form submission successful!</div>
+                        To activate this form, sign up at
+                        <br />
+                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                    </div>
+                </div>
+                {/* Submit error message*/}
+                {/**/}
+                {/* This is what your users will see when there is*/}
+                {/* an error submitting the form*/}
+                <div className="d-none" id="submitErrorMessage"><div className="text-center text-danger mb-3">Error sending message!</div></div>
+                {/* Submit Button*/}
+                <div className="text-center"><button className="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>
+            </form>
         </div>
-        <div className="col-lg-6">
-          <iframe className="w-100 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.678901234567!2d72.153456!3d21.764789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f4e!!!!!!!!!!0x0!2zMjHCsDQ1JzUzIjIuMiJOIDcywrAwOScxMi40IkU!5e0!3m2!1sen!2sin!4v1699999999999" height={320} style={{"border":"0"}} allowFullScreen loading="lazy" />
+    </section>);
+}
+function Sitefooter() {
+    return (<footer className="footer py-4">
+        <div className="container">
+            <div className="row align-items-center">
+                <div className="col-lg-4 text-lg-start">Copyright © Your Website 2023</div>
+                <div className="col-lg-4 my-3 my-lg-0">
+                    <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i className="fab fa-twitter" /></a>
+                    <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i className="fab fa-facebook-f" /></a>
+                    <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i className="fab fa-linkedin-in" /></a>
+                </div>
+                <div className="col-lg-4 text-lg-end">
+                    <a className="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a className="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-    )
+    </footer>)
 }
-function siteFooter(){
-    return(
-         <footer className="footer py-4 text-center">
-    <div className="container">
-      <p className="mb-1">© 2026 Spice Haven Restaurant. All rights reserved.</p>
-      <p className="text-muted small">Made with love &amp; Bootstrap • Bhavnagar</p>
-    </div>
-  </footer>
-    )
-}
-function resturant(){
-    return(
-    <div>
-  {/* 1. Navbar / Header */}
-        <siteHeader />
-  {/* 2. Hero / Home */}
-        <home />
-  {/* 3. About Us */}
-        <aboutUs />
-  {/* 4. Menu Highlights */}
-        <menu />
-  {/* 5. Today's Specials */}
-        <todaySpc />
-  {/* 6. Testimonials (now moved up to be section #6) */}
-  <testimonial />
-  {/* 7. Gallery */}
- <gallery />
-  {/* 8. Contact  */}
- <conatctUs />
-  {/* 9. Footer (extra but kept for completeness) */}
- <siteFooter />
-  {/* Bootstrap JS */}
-</div>
-    )
-}
+function Website() {
+    return (<div>
+        {/* Navigation*/}
+        <Menu />
+        {/* Masthead*/}
+        <Siteheader />
+        {/* Services*/}
+        <Services />
+        {/* Portfolio Grid*/}
+        <Portfolio />
+        {/* About*/}
+        <Aboutus />
+        {/* Team*/}
+        <Team />
+        {/* Clients*/}
+        <Client />
+        {/* Contact*/}
+        <Contactus />
+        {/* Footer*/}
+        <Sitefooter />
+        {/* Portfolio Modals*/}
 
-
-root.render(resturant);
+    </div>
+    )
+}
+root.render(<Website />);
