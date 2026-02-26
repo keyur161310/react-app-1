@@ -96,31 +96,56 @@ function Portfolio() {
         </div>
     </section>)
 }
-function AboutUsIteam(props){
-    return(<li>
-                    <div className="timeline-image"><img className="rounded-circle img-fluid" src={"assets/img/about/" + props.photo }alt="..." /></div>
-                    <div className="timeline-panel">
-                        <div className="timeline-heading"> photo='1.jpg'
-                            <h4>{props.year}</h4>
-                            <h4 className="subheading">{props.new}</h4>
-                        </div>
-                        <div className="timeline-body"><p className="text-muted">{props.detail}</p></div>
-                    </div>
-                </li>);
-}
+
 function Aboutus() {
     return (<section className="page-section" id="about">
         <div className="container">
             <div className="text-center">
                 <h2 className="section-heading text-uppercase">About</h2>
-                <h3 className="section-subheading text-muted">our gratefull goerny</h3>
+                <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <ul className="timeline">
-                < AboutUsIteam year='2009-2011' photo='1.jpg' new='Our Humble Beginnings' detail='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!' />
-                < AboutUsIteam  className="timeline-inverted" year='March 2011' photo='2.jpg' new='An Agency is Born' detail='My favorite hobby is coding. I enjoy creating websites and learning new technologies like HTML, CSS, and JavaScript. Coding helps me improve my problem-solving skills and creativity. Whenever I build something and see it working, I feel very happy. It also helps me prepare for my future career.' />
-                < AboutUsIteam year='December 2015'  photo='3.jpg'new='Transition to Full Service' detail='Time is very valuable in our life. Once time is gone, it never comes back. We should use our time wisely for study, work, and self-improvement. Successful people respect time and follow a daily schedule. If we manage our time properly, we can achieve our goals easily.' />
-                < AboutUsIteam  className="timeline-inverted" year='July 2020' photo='4.jpg' new='Phase Two Expansion' detail='My dream career is to become a software developer. I want to build useful applications and websites that help people. Technology is growing very fast, and I want to grow with it. By learning and practicing every day, I believe I can achieve my dream.' />
-                  <li className="timeline-inverted">
+                <li>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>2009-2011</h4>
+                            <h4 className="subheading">Our Humble Beginnings</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li className="timeline-inverted">
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>March 2011</h4>
+                            <h4 className="subheading">An Agency is Born</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li>
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/3.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>December 2015</h4>
+                            <h4 className="subheading">Transition to Full Service</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li className="timeline-inverted">
+                    <div className="timeline-image"><img className="rounded-circle img-fluid" src="assets/img/about/4.jpg" alt="..." /></div>
+                    <div className="timeline-panel">
+                        <div className="timeline-heading">
+                            <h4>July 2020</h4>
+                            <h4 className="subheading">Phase Two Expansion</h4>
+                        </div>
+                        <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li className="timeline-inverted">
                     <div className="timeline-image">
                         <h4>
                             Be Part
