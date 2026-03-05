@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Restaurant from './parts/restuarant'
 const root = ReactDOM.createRoot(document.getElementById('root'));
-function Hello()
-{
-    return <div>Hello</div>
-}
-root.render(<Hello />);
+
+root.render(<Restaurant />);
